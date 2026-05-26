@@ -56,9 +56,21 @@ Every product page got a full rewrite — not just the names, every paragraph. T
 
 Before: every printed thing looked like it came from a different company. After: it's one brand.
 
-### A growth plan that's actually written down
+### A full social media strategy and campaign plan
 
-A four-tab interactive report covering posting schedule, ad budget allocation, five UGC campaign playbooks, an AI content production plan, and B2B partnership tracking. The team has a shared answer to *"what are we doing next?"* rather than improvising weekly.
+The growth work was the largest non-code piece of the engagement. The brand didn't just need a website that converts — it needed a written social media strategy and a campaign playbook the team can run for the next twelve months without inventing each week from scratch.
+
+**Posting strategy.** A platform-by-platform cadence with explicit content-mix targets — product shots, lifestyle and UGC, behind-the-scenes, partnership posts, game-day reposts. Instagram-heavy with a TikTok plan for short-form moments, plus caption templates the team can adapt. The team stops asking *"what should we post today?"* each morning.
+
+**Five UGC campaigns, end to end.** Each campaign has a defined hook, the customer offer, the content ask (what the customer shoots and how), the hashtag system, and an expected lift timeframe. These aren't generic *"tag us and you might win something"* prompts — they're specific seasonal plays tied to FISH's actual moments: game-day reposts, marina partner takeovers, after-the-game reactions, college-night activations. The team can launch them on a schedule.
+
+**Ad budget allocation.** A monthly spend broken down across cold acquisition (lookalikes), retargeting (warm audiences who visited the site), and partner-amplified content. Each channel has a target CPA derived from FISH's real margin and AOV, so the team knows when to scale spend and when to cut a campaign.
+
+**B2B partnership pipeline.** Active relationships with Collegiate Nightlife, Paul Davis, and PORT 32 Marinas are tracked alongside a written pipeline of next-target partners — what to ask each one for, what to offer, and how to measure whether the partnership is producing.
+
+**AI content production at small-brand scale.** A practical playbook for using modern AI video and image tools to produce more brand content without hiring a content team — what's worth the effort, what to skip, and how to keep the output on-brand.
+
+The output isn't a slide deck that sits unread. It's a four-tab interactive report the team can update as campaigns ship and the pipeline moves.
 
 ### Native newsletter capture
 
