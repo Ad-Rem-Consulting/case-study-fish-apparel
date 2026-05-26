@@ -1,6 +1,20 @@
+<!--
+ad-rem-case-study:
+  client: FISH Apparel
+  project: Full business revitalization for a college DTC hat brand
+  outcome: Custom Shopify storefront, B2B wholesale system, brand collateral, and a growth plan — replacing ~$1,500/year in paid Shopify extensions.
+  stack: [Shopify, Liquid, Vanilla JS, Custom CSS]
+  liveUrl: https://fuckitshithappens.org
+  year: 2026
+  thumbnail: screenshots/home.jpg
+  timeline: Under a month
+  engagement: Fixed-price
+  order: 1
+-->
+
 # FISH Apparel — A Full Business Revitalization
 
-Took a college DTC hat brand from "paying for everything off the shelf" to a custom-engineered commercial surface — Shopify storefront, B2B wholesale system, brand collateral, and a 12-month growth plan. ~$1,500/year in paid Shopify extensions replaced with custom Liquid and JavaScript that ships with the theme.
+Took a college DTC hat brand from "paying for everything off the shelf" to a custom-engineered commercial surface — Shopify storefront, B2B wholesale system, brand collateral, and a 12-month growth plan. ~$1,500/year in paid Shopify extensions replaced with custom code that ships with the theme.
 
 > **Live site:** [fuckitshithappens.org](https://fuckitshithappens.org)
 
@@ -8,103 +22,85 @@ Took a college DTC hat brand from "paying for everything off the shelf" to a cus
 
 ## The problem
 
-FISH Apparel (acronym aside — *Fuck It, Shit Happens*) is a Gainesville-based college hat brand selling at retail and through wholesale partnerships with bars, marinas, and college nightlife venues. The brand had a Shopify store, a name, and momentum — but the business surface around it was being held together by a stack of paid Shopify apps and ad-hoc workarounds.
+FISH Apparel (acronym aside — *Fuck It, Shit Happens*) is a Gainesville-based college hat brand selling at retail and through wholesale partnerships with bars, marinas, and college nightlife venues. The brand had a Shopify store, a name, and momentum — but the business surface around it was held together by a stack of paid Shopify apps and ad-hoc workarounds.
 
-The specific problems:
+Specifically:
 
-- **The product gallery shipped wrong photos** for the selected color variant — a checkout-killer for a brand whose product variants are the entire pitch (Gator orange, Seminole garnet, etc.). The store was paying $14.90/month for a Shopify app to fix it.
-- **No wholesale system.** B2B partners would email orders manually. There was no real catalog, no pricing structure, no contact flow.
-- **Generic shipping copy, no AOV mechanic.** Customers had no visible incentive to add a third hat — even though the brand's economics work much better at the 3-hat threshold.
-- **No coherent brand collateral.** Inconsistent business cards, no email signatures, no social media plan beyond posting whenever.
-- **Product bios that read like dropdown options**, not like the brand's actual voice.
+- **The product gallery shipped wrong photos** for the selected color variant — a checkout-killer for a brand whose product variants *are* the entire pitch (Gator orange, Seminole garnet, etc.). The store was paying $14.90/month for a Shopify app to fix it.
+- **No wholesale channel at all.** Retail partners — bars, marinas, college venues — would email orders manually. There was no real catalog, no pricing structure, no contact flow.
+- **No checkout incentive to add a third hat** even though the brand's economics work much better at the 3-hat threshold.
+- **Inconsistent brand collateral.** Business cards, email signatures, social posts — none of them looked like the same business.
+- **Product copy that read like dropdown options**, not like the brand's actual voice.
 
-The brand needed less app subscriptions and more *infrastructure*. This was a rebuild of how the business operated commercially, not a redesign of how it looked.
+The brand needed fewer app subscriptions and more *infrastructure*. This was a rebuild of how the business operated commercially, not a redesign of how it looked.
 
 ## What we built
 
-### 1. Custom Shopify storefront
+### A storefront that shows the right product
 
-A full storefront customization on top of the Turbo Seoul theme. All custom files prefixed with `fish-` to stay clean against future theme updates.
+Customers picking a color variant now see only the photos that match that color. The free-shipping progress bar visibly nudges them toward the 3-hat threshold. The cart page surfaces one-click add for impulse purchases instead of forcing customers through a longer flow. The mega menu shows live products instead of static category links. All of this without a single paid Shopify app — every feature is custom code that lives in the theme.
 
-- **Variant image filtering** (`fish-variant-images.liquid`) — 160 lines of vanilla JS that hooks into the theme's Flickity gallery, reads image filenames, and re-orders the gallery in real time when a customer picks a color. Replaces the *SA Variant Image Automator* app at $14.90/month.
-- **Infinite scroll photo gallery** — A smooth, seamless lifestyle-photo marquee using `requestAnimationFrame` to measure exact pixel widths and snap the loop. No CSS keyframe rounding errors, no white flash at the seam.
-- **Free shipping progress bar** (`fish-shipping-progress.liquid`) — "Add X more hats for FREE SHIPPING" with a visible fill animation. Threshold set at 3 hats. Replaces the *Hextom Free Shipping Bar* premium tier at $9.99/month.
-- **Quick Add to Cart on cart page** — Replaces the theme's default 3-click flow with a 1-click POST to `/cart/add.js`. Lifted impulse-purchase conversion on the cart page.
-- **Scroll-aware sticky header** — Hides on scroll down, reappears on scroll up. More mobile real estate.
-- **Custom mega menu with live product grid** — Pulls products directly from the relevant collection so the menu always shows current inventory.
+### A working wholesale channel where there wasn't one
 
-### 2. B2B wholesale system
+Retail partners now have a dedicated wholesale portal. Each partner gets access via a QR code on their business card — they scan it and land directly inside the authenticated catalog, no password entry. Orders go through a structured form with quantity selectors and real-time totals; the order arrives in the brand's inbox already scoped for fulfillment. Before this engagement, the wholesale channel was emails and screenshots. Now it's a real funnel.
 
-Built from scratch as a single Liquid section (`fish-wholesale.liquid`) — no Shopify app required. Retailers visit `/pages/wholesale`, enter a password (or scan a QR-coded business card with the password pre-filled as a URL param), and get a full wholesale catalog at 50% off retail.
+### Product copy rewritten across the entire catalog
 
-- Quantity selectors per variant with real-time order totals
-- Client-side SHA-256 hashing against a Shopify page metafield for password validation (the wholesale page isn't a checkout — it's a structured order form that emails the order to the brand)
-- One-click access via QR-coded business cards
-- Replaces wholesale apps like *Wholesale Pricing Discount B2B* ($24.99/month), *B2B Wholesale Hub* ($39/month), or *SparkLayer* ($49/month with a 50-order monthly cap)
+Every product page got a full rewrite — not just the names, every paragraph. The previous copy read like Shopify variant labels: color, size, fabric, repeat. The new copy talks like the brand actually talks. Each hat is tied to its context (game-day, beach day, after-party), references the specific moments the brand sells into, and matches the tone of its social presence. Product pages stopped feeling like a spreadsheet and started feeling like the brand itself. That's the difference between a customer landing on a page and bouncing vs. landing on a page and adding to cart.
 
-### 3. Product bio rewrites
+### A coherent set of brand collateral
 
-Rewrote every product bio in the brand's actual voice. Old copy read like Shopify variant labels ("Gator Orange Corduroy Hat — One Size — Adjustable"). New copy leads with character and ties each hat to its context (gamedays, beach days, late-night bars). Where the original copy was generic catalog filler, the rewrites match how FISH actually talks about itself.
+- **Business cards** — multiple design directions, toggleable per team member, with QR codes that drop B2B prospects directly into the wholesale portal. Plus a complete printing guide so the team can order new cards without needing a designer in the loop.
+- **Email signatures** — branded, consistent across the team, using the brand fonts and color system.
+- **Social link previews** — link shares on iMessage, LinkedIn, and Slack now render a branded preview card instead of nothing.
 
-### 4. Brand collateral
+Before: every printed thing looked like it came from a different company. After: it's one brand.
 
-- **Business card system** — An interactive HTML designer with four design directions, toggleable between team members. Each card includes a QR code linking directly to the wholesale portal with the password pre-filled. Shipped with a complete printing guide covering CMYK specs, paper-stock recommendations, and a comparison of three printers we'd actually use.
-- **Email signatures** — A branded Gmail-ready signature template using the brand fonts (Dosis), the cinnabar-equivalent accent color, and consistent contact-block formatting across the team.
-- **OG / social preview image** — HTML template plus Puppeteer pipeline that generates a branded 1200×630 PNG for link previews on iMessage, Twitter, LinkedIn, and Slack.
+### A growth plan that's actually written down
 
-### 5. Social media growth plan
+A four-tab interactive report covering posting schedule, ad budget allocation, five UGC campaign playbooks, an AI content production plan, and B2B partnership tracking. The team has a shared answer to *"what are we doing next?"* rather than improvising weekly.
 
-A four-tab interactive HTML report covering:
+### Native newsletter capture
 
-- **Posting schedule** — Cadence and content mix across Instagram, TikTok, and other platforms
-- **Ad budget allocation** — How to deploy a fixed monthly spend across acquisition vs. retargeting
-- **Five UGC campaigns** — Tactical playbooks for user-generated content with real-world hooks (game-day reposts, marina partnerships, etc.)
-- **AI content plan** — How to use Veo 3.1 and Nano Banana for video and image generation at small-brand scale
-- **B2B partnership tracking** — Active partnerships with Collegiate Nightlife, Paul Davis, PORT 32 Marinas, and ongoing pipeline
+What would normally be a paid Klaviyo subscription (~$30/month at 1,000 contacts) is now a homepage section that sends signups directly into the Shopify customer list. Same lead capture, no monthly fee.
 
-### 6. Marketing infrastructure
+## Outcome
 
-- **Native newsletter capture** (`fish-newsletter-instagram.liquid`) — Dual-column homepage section with email signup on the left and Instagram CTA on the right. Uses Shopify's native contact form so signups go straight to the customer list. Replaces Klaviyo (~$30/month at 1,000 contacts) and Privy ($24–$45/month).
+- **~$1,500/year in paid Shopify extensions replaced** with custom code that ships in the theme. One-time engagement cost; permanent savings.
+- **A B2B funnel where there wasn't one.** Retail partners now self-serve on a real catalog, and structured orders arrive ready to fulfill.
+- **AOV mechanic built into checkout.** The "Add X for free shipping" progress bar pushes customers toward the 3-hat threshold where the brand makes money.
+- **Product pages that sell, not just list.** The full copy rewrite shifted product detail pages from feeling like a catalog to feeling like the brand.
+- **A coherent commercial identity** across storefront, business cards, email, and social — all reading as one brand instead of a stack of one-off pieces.
+- **A growth plan in writing.** The team has a shared roadmap instead of improvising weekly.
+
+## Screenshots
+
+![FISH Apparel home page with the brand logo and lifestyle gallery](./screenshots/home.jpg)
+*Home page. Lifestyle gallery uses the custom infinite-scroll marquee.*
+
+![FISH Apparel products collection page showing the hat range](./screenshots/shop.jpg)
+*Products collection page.*
+
+![FISH Apparel wholesale access portal](./screenshots/wholesale.jpg)
+*Wholesale portal — password-protected catalog reachable directly from QR codes on partner business cards.*
 
 ## Stack
 
 | Layer | Technology |
 |---|---|
 | E-commerce platform | Shopify |
-| Theme base | Turbo Seoul (Out of the Sandbox) |
-| Templating | Liquid (~1.6MB custom) |
-| Client code | Vanilla JavaScript (~500 lines across six snippets) |
-| Styling | Custom CSS (2,200 lines, `fish-apparel.css`) |
-| Type | Dosis (display) / Arial · Helvetica Neue (body) |
-| Brand colors | Electric blue `#56bdec`, Dark `#16161d`, Gold `#c79f5c` |
-| Auth (wholesale) | Client-side SHA-256 against a Shopify page metafield |
-| OG image pipeline | HTML template + Puppeteer |
-
-## Outcome
-
-- **~$1,500/year in paid Shopify extensions replaced with custom code.** The store stopped paying for variant image filtering, wholesale apps, free-shipping bar apps, newsletter capture, and quick-add functionality — all replaced with custom Liquid and JS that ships with the theme. One-time engagement cost, permanent savings.
-- **A working B2B channel where there wasn't one.** Wholesale partners now have a dedicated portal with structured ordering. Business cards carry QR codes that drop a retailer directly into the authenticated catalog. The B2B funnel didn't exist before this engagement.
-- **AOV mechanic built into checkout.** The "Add X for free shipping" progress bar pushes customers toward the 3-hat threshold where the brand's economics work best.
-- **A coherent commercial identity.** Business cards, email signatures, and social-media collateral now read as one brand instead of a stack of one-off Canva files.
-- **A growth plan that's actually written down.** The social-media strategy report and B2B partnership tracker mean the team has a shared answer to "what are we doing next?" rather than improvising weekly.
-
-## Screenshots
-
-![FISH Apparel home page with the new drop announcement and lifestyle gallery](./screenshots/home.jpg)
-*Home page. Lifestyle gallery uses the custom infinite-scroll marquee; "BUY 3 HATS, GET FREE SHIPPING" announcement bar drives toward the free-shipping threshold.*
-
-![FISH Apparel collection page showing the product grid](./screenshots/shop.jpg)
-*Products collection page. Custom mega menu (live product grid) and the brand's color palette are visible across the layout.*
-
-![FISH Apparel wholesale portal landing page](./screenshots/wholesale.jpg)
-*Wholesale portal landing. Password-protected catalog reachable directly from QR codes on the partner business cards.*
+| Theme base | Turbo Seoul (customized) |
+| Templating | Liquid |
+| Client code | Vanilla JavaScript |
+| Styling | Custom CSS |
+| Type | Dosis (display) · Arial / Helvetica Neue (body) |
+| Brand colors | Electric blue, dark navy, gold accent |
 
 ## Timeline & engagement shape
 
-- **Duration**: Under a month, end to end
-- **Engagement type**: Fixed-price
-- **Deliverables**: Custom Shopify storefront, B2B wholesale system, product bio rewrites, business card system + printing guide, email signatures, OG / social preview pipeline, four-tab social media growth plan
-- **Status**: Shipped — live at [fuckitshithappens.org](https://fuckitshithappens.org). Custom code is maintained under the `fish-` prefix and survives theme updates.
+- **Duration:** Under a month, end to end
+- **Engagement type:** Fixed-price
+- **Status:** Shipped — live at [fuckitshithappens.org](https://fuckitshithappens.org)
 
 ---
 
